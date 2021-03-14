@@ -124,7 +124,7 @@ df_cat = df.select_dtypes(include='object')
 df_num = df.select_dtypes(exclude='object')
 
 
-with open('.\precessing_data.pkl', 'rb') as f:
+with open('./precessing_data.pkl', 'rb') as f:
     scaler, onehotencoder = pickle.load(f)
 
 df_cat = onehotencoder.transform(df_cat).toarray()
