@@ -11,7 +11,7 @@ st.set_page_config(page_title='Projeto Machine Learning - Recursos Humanos', lay
 
 image = Image.open('logo.jpg')
 
-st.image(image, use_column_width=True)
+st.image(image, use_column_width=False, width=840)
 st.write("""
 # Aplicação de Machine Learning
 
