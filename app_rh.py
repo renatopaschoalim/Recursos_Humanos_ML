@@ -33,7 +33,7 @@ if uploader_file is not None:
 else:
     def user_input_features():
         Idade = st.sidebar.slider('Idade', 18, 70, 30)
-        Viagem_Negocio = st.sidebar.selectbox('Viagem a Negócio',('Raramente', 'Frequentemente'))
+        Viagem_Negocio = st.sidebar.selectbox('Viagem a Negócio',('Não Viaja','Raramente', 'Frequentemente'))
         Valor_Diario = st.sidebar.slider('Valor Diário', 0, 1500, 750)
         Departamento = st.sidebar.selectbox('Departamento', ('Vendas', 'Pesquisa & Desenvolvimento', 'Recursos Humanos'))
         Distancia_Casa = st.sidebar.slider('Distância de Casa', 1, 60, 30)
@@ -110,7 +110,7 @@ df = df.replace(['Ensino Médio', 'Faculdade', 'Bacharelado', 'Mestrado', 'Douto
 df = df.replace(['Baixo', 'Médio', 'Alto', 'Muito Alto'],[1, 2, 3, 4])
 df = df.replace(['Ruim', 'Bom', 'Ótimo', 'Excelente'],[1, 2, 3, 4])
 df = df.replace(['Baixo', 'Bom', 'Excelente', 'Excepcional'],[1, 2, 3, 4])
-df = df.replace(['Raramente', 'Frequentemente'], ['Travel_Rarely', 'Travel_Frequently'])
+df = df.replace(['Não Viaja','Raramente', 'Frequentemente'], ['Non-Travel','Travel_Rarely', 'Travel_Frequently'])
 df = df.replace(['Vendas', 'Pesquisa & Desenvolvimento', 'Recursos Humanos'], ['Sales', 'Research & Development', 'Human Resources'])
 df = df.replace(['Ciências da Vida', 'Outros', 'Medicina', 'Marketing','Grau Técnico', 'Recursos Humanos'], ['Life Sciences', 'Other', 'Medical', 'Marketing', 'Technical Degree', 'Human Resources'])
 df = df.replace(['Feminino', 'Masculino'], ['Female', 'Male'])
@@ -132,7 +132,7 @@ df_cat = pd.DataFrame(df_cat)
 
 df_all = pd.concat([df_cat, df_num], axis=1)
 
-df_all_scaler = scaler.transform(df_all)
+df_all = scaler.transform(df_all)
 
     
 xgb = XGBClassifier()
@@ -141,7 +141,7 @@ booster.load_model('./model.dat')
 xgb._Booster = booster
 
 
-pred = xgb.predict(df_all_scaler)
+pred = xgb.predict(df_all)
 pred = pred[0]
 if pred == 1:
     pred = 'Sim'
