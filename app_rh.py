@@ -123,7 +123,6 @@ df = df.replace(['Solteiro', 'Casado', 'Divorciado'], ['Single', 'Married', 'Div
 df_cat = df.select_dtypes(include='object')
 df_num = df.select_dtypes(exclude='object')
 
-
 with open('./precessing_data.pkl', 'rb') as f:
     scaler, onehotencoder = pickle.load(f)
 
@@ -134,6 +133,7 @@ df_all = pd.concat([df_cat, df_num], axis=1)
 
 df_all = scaler.transform(df_all)
 
+st.write(df_all)
     
 xgb = XGBClassifier()
 booster = Booster()
@@ -142,7 +142,6 @@ xgb._Booster = booster
 
 
 pred = xgb.predict(df_all)
-##pred = pd.DataFrame(pred, columns=['Previsão'])
 pred = pred[0]
 if pred == 1:
     pred = 'Sim'
