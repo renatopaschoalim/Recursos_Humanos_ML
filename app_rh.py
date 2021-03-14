@@ -4,7 +4,7 @@ import pickle
 from xgboost import Booster
 from xgboost import XGBClassifier
 from PIL import Image
-
+import numpy as np
 
 
 st.set_page_config(page_title='Projeto Machine Learning - Recursos Humanos', layout='wide')
@@ -120,9 +120,12 @@ df = df.replace(['Executivo de vendas', 'Cientista de pesquisa', 'Técnico de la
        'Sales Representative', 'Research Director', 'Human Resources'])
 df = df.replace(['Solteiro', 'Casado', 'Divorciado'], ['Single', 'Married', 'Divorced'])
 
-#df_cat = df.select_dtypes(include='object')
+
 df_cat = df[['Viagem_Negocio', 'Departamento', 'Area_Formacao', 'Genero', 'Cargo', 'Estado_Civil']]
-df_num = df.select_dtypes(exclude='object')
+df_num = df[['Idade', 'Valor_Diario', 'Distancia_Casa', 'Educacao', 'Satisfeito_Ambiente', 'Horas_Trabalhadas', 'Envolvimento_Trabalho', 
+                        'Nivel_Emprego', 'Satisfeito_Trabalho', 'Renda_Mensal', 'Taxa_Mensal', 'Num_Empresa_Trabalhou', 'Hora_Extra', 'Aumento_Percentual_Salar',
+                        'Avaliacao_Desempenho', 'Satisfacao_Relacionamento', 'Nivel_Acoes_Empresa', 'Tempo_De_Registro', 'Tempo_Treinamento_Ano_Passado',
+                        'Equilibrio_Trab_Vida_Pess', 'Tempo_Na_Empresa', 'Anos_Funcao_Atual', 'Anos_Desde_Ultim_Promo', 'Anos_Com_Mesmo_Gerente']]
 
 with open('./precessing_data.pkl', 'rb') as f:
     scaler, onehotencoder = pickle.load(f)
