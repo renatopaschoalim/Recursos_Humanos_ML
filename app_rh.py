@@ -120,7 +120,8 @@ df = df.replace(['Executivo de vendas', 'Cientista de pesquisa', 'Técnico de la
        'Sales Representative', 'Research Director', 'Human Resources'])
 df = df.replace(['Solteiro', 'Casado', 'Divorciado'], ['Single', 'Married', 'Divorced'])
 
-df_cat = df.select_dtypes(include='object')
+#df_cat = df.select_dtypes(include='object')
+df_cat = df[['Viagem_Negocio', 'Departamento', 'Area_Formacao', 'Genero', 'Cargo', 'Estado_Civil']]
 df_num = df.select_dtypes(exclude='object')
 
 with open('./precessing_data.pkl', 'rb') as f:
