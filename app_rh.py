@@ -17,7 +17,7 @@ st.write("""
 
 
 
-Implementação do modelo XGBoost Classifier para identicar se o colaborador sai da empresa.
+Implementação do modelo de Machine Learning **XGBoost Classifier** para identicar se o colaborador sairá da empresa.
 
 
 
@@ -132,9 +132,9 @@ df_cat = pd.DataFrame(df_cat)
 
 df_all = pd.concat([df_cat, df_num], axis=1)
 
-df_all = scaler.transform(df_all)
+df_all_scaler = scaler.transform(df_all)
 
-st.write(df_all)
+st.write(df_all_scaler)
     
 xgb = XGBClassifier()
 booster = Booster()
@@ -142,7 +142,7 @@ booster.load_model('./model.dat')
 xgb._Booster = booster
 
 
-pred = xgb.predict(df_all)
+pred = xgb.predict(df_all_scaler)
 pred = pred[0]
 if pred == 1:
     pred = 'Sim'
