@@ -134,7 +134,6 @@ df_all = pd.concat([df_cat, df_num], axis=1)
 
 df_all_scaler = scaler.transform(df_all)
 
-st.write(df_all_scaler)
     
 xgb = XGBClassifier()
 booster = Booster()
