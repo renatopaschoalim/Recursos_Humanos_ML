@@ -18,7 +18,7 @@ st.write("""
 
 
 
-Implementação do modelo de Machine Learning **XGBoost Classifier** para identicar se o colaborador sairá da empresa.
+Implementação do modelo de Machine Learning **XGBoost Classifier** para identicar se o colaborador tem a probabilidade de sair da empresa ou não.
 
 
 
@@ -37,26 +37,26 @@ else:
     def user_input_features():
         Idade = st.sidebar.slider('Idade', 18, 70, 30)
         Viagem_Negocio = st.sidebar.selectbox('Viagem a Negócio',('Não Viaja','Raramente', 'Frequentemente'))
-        Valor_Diario = st.sidebar.slider('Valor Diário', 0, 1500, 750)
+        Valor_Diario = st.sidebar.slider('Salário Diário', 0, 1500, 750)
         Departamento = st.sidebar.selectbox('Departamento', ('Vendas', 'Pesquisa & Desenvolvimento', 'Recursos Humanos'))
-        Distancia_Casa = st.sidebar.slider('Distância de Casa', 1, 60, 30)
+        Distancia_Casa = st.sidebar.slider('Distância de Casa ao trabalho - (km)', 1, 60, 30)
         Educacao = st.sidebar.selectbox('Grau Escolaridade' ,('Ensino Médio', 'Graduado', 'Pós Graduado', 'Mestrado', 'Doutorado'))
         Area_Formacao = st.sidebar.selectbox('Área de Formação', ('Ciências da Vida', 'Outros', 'Medicina', 'Marketing','Grau Técnico', 'Recursos Humanos'))
         Satisfeito_Ambiente = st.sidebar.selectbox('Satisfação com o Ambiente', ('Baixo', 'Médio', 'Alto', 'Muito Alto'))
         Genero = st.sidebar.selectbox('Genero', ('Feminino', 'Masculino'))
-        Horas_Trabalhadas = st.sidebar.slider('Horas Trabalhadas', 10, 150, 83)
+        Horas_Trabalhadas = st.sidebar.slider('Horas Trabalhadas semanais', 10, 150, 83)
         Envolvimento_Trabalho = st.sidebar.selectbox('Envolvimeno no Trabalho', ('Baixo', 'Médio', 'Alto', 'Muito Alto'))
         Nivel_Emprego = st.sidebar.slider('Nível de Emprego', 1, 5, 2)
         Cargo = st.sidebar.selectbox('Cargo', ('Executivo de vendas', 'Cientista de pesquisa', 'Técnico de laboratório', 'Diretor de Fabricação', 'Representante de Saúde', 'Gerente', 'Representante de Vendas', 'Diretor de Pesquisa', 'Recursos Humanos'))
         Satisfeito_Trabalho = st.sidebar.selectbox('Grau Satisfação com Trabalho', ('Baixo', 'Médio', 'Alto', 'Muito Alto'))
         Estado_Civil = st.sidebar.selectbox('Estado Civil', ('Solteiro', 'Casado', 'Divorciado'))
         Renda_Mensal = st.sidebar.slider('Renda Mensal', 100.00, 50000.00, 4500.00)
-        Taxa_Mensal = st.sidebar.slider('Taxa Mensal', 2.0, 27.0, 15.0)
+        Taxa_Mensal = st.sidebar.slider('Taxa Mensal % - > (Salário Básico Mensal x 12) / (Total de Mês de Trabalho em um Ano) = TAXA MENSAL', 2.0, 27.0, 15.0)
         Num_Empresa_Trabalhou = st.sidebar.slider('Nº de Empresa que já trabalhou', 1, 20, 6)
         Hora_Extra = st.sidebar.selectbox('Faz Hora Extra?', ('Não', 'Sim'))
-        Aumento_Percentual_Salar = st.sidebar.slider('Percentual de aumento de Salário ', 0.0, 100.0, 15.0)
+        Aumento_Percentual_Salar = st.sidebar.slider('Percentual de aumento de salário', 0.0, 100.0, 15.0)
         Avaliacao_Desempenho = st.sidebar.selectbox('Avaliação de Desempenho', ('Baixo', 'Bom', 'Excelente', 'Excepcional'))
-        Satisfacao_Relacionamento = st.sidebar.selectbox('Satisfação do relacionamento no trabalho', ('Baixo', 'Médio', 'Alto', 'Muito Alto'))
+        Satisfacao_Relacionamento = st.sidebar.selectbox('Satisfação de relacionamento no trabalho', ('Baixo', 'Médio', 'Alto', 'Muito Alto'))
         Nivel_Acoes_Empresa = st.sidebar.slider('Nível de ações da empresa', 0, 5, 0)
         Tempo_De_Registro = st.sidebar.slider('Tempo de registro em carteira', 0, 35, 3)
         Tempo_Treinamento_Ano_Passado = st.sidebar.slider('Tempo de treinamento no ano anterior', 0, 20, 0)
