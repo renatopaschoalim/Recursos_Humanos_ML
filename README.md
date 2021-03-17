@@ -78,6 +78,8 @@ https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset
 Desenvolvi uma notebook com as análise exploratória, transformação dos dados, normalização dos dados, aplicação de técnicas para balanceamento de classe minoritária, treinamento e validação do modelo. Foi aplicado 3 modelos de Machine Learning tendo se destacado o modelo XGBClassifier.
 A partir desse notebook, implementei o modelo treinado em produção onde ficará disponível para os gestores do departamento de RH coletar previsões e probabilidade dos registros imputados. 
 
+Deploy da aplicação: http://rh-ml.herokuapp.com/
+
 Essa aplicação usamos os parâmetros padrão do modelo, mas para melhorar os resultados poderiamos testar:
 
 * Usar outros modelos de classificação;
