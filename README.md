@@ -73,3 +73,11 @@ Informações:
 
 
 https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset
+
+Essa aplicação usamos os parâmetros padrão do modelo, mas para melhorar os resultados poderiamos testar:
+
+* Usar outros modelos de classificação;
+
+* Usar técnicas de hiperparamentro para melhorar o modelo;
+
+* Combinação de modelos;
