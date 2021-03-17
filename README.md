@@ -1,7 +1,7 @@
 # Aplicação de Machine Learning para setor de Recursos Humanos.
 
-#Desgaste e desempenho de funcionário do IBM HR Analytics
-###Previsão do desgaste de seus valiosos funcionários
+## Desgaste e desempenho de funcionário do IBM HR Analytics
+## Previsão do desgaste de seus valiosos funcionários
 
 Descubra os fatores que levam ao desgaste de funcionários e como consequentemente a sair da empresa que trabalha. Este é um conjunto de dados fictício criado por cientistas de dados da IBM com 1470 registros.
 
