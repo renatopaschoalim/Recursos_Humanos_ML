@@ -75,7 +75,6 @@ Informações:
 https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset
 
 
-Neste projeto usei a base de dados da IBM HR Analytics com 1470 registros de funcionários fictícios afim de descobrir fatores que levam ao desgaste do funcionário e consequentemente a sair da empresa que trabalha. 
 Desenvolvi uma notebook com as análise exploratória, transformação dos dados, normalização dos dados, aplicação de técnicas para balanceamento de classe minoritária, treinamento e validação do modelo. Foi aplicado 3 modelos de Machine Learning tendo se destacado o modelo XGBClassifier.
 A partir desse notebook, implementei o modelo treinado em produção onde ficará disponível para os gestores do departamento de RH coletar previsões e probabilidade dos registros imputados. 
 
